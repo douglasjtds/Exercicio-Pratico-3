@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package EP3;
 
 import javax.swing.JOptionPane;
@@ -119,6 +114,7 @@ public class TelaInserirReporter extends javax.swing.JFrame {
 
     private void botaoCadastrarReporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarReporterActionPerformed
         //Cadastrar um novo reporter:
+        
         Reporter rep = new Reporter(CampoNomeReporter.getText(), new Integer(CampoIdReporter.getText()));
         boolean cadastrou = false;
         for (int i = 0; i < vetorDeReporter.length; i++){

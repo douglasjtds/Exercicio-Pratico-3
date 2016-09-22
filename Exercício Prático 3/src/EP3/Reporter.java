@@ -8,14 +8,7 @@ public class Reporter {
     
     private String nomeCompletoReporter;
     private int idSequencial;
-
     
-    public Reporter(int idSequencial, String nomeCompletoReporter) {
-        this.idSequencial = idSequencial;
-        this.nomeCompletoReporter = nomeCompletoReporter;
-    }
-
-  
     public int getIdSequencial() {
         return idSequencial;
     }
@@ -31,5 +24,9 @@ public class Reporter {
     public void setNomeCompletoReporter(String nomeCompletoReporter) {
         this.nomeCompletoReporter = nomeCompletoReporter;
     }
-    
+ 
+    public Reporter(String nomeCompletoReporter, int idSequencial) {
+        this.nomeCompletoReporter = nomeCompletoReporter;
+        this.idSequencial = idSequencial;
+    }
 }

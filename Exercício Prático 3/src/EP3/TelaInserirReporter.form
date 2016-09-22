@@ -43,10 +43,8 @@
                               <EmptySpace pref="103" max="32767" attributes="0"/>
                               <Component id="botaoCadastrarReporter" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="CampoNomeReporter" max="32767" attributes="0"/>
-                              <Component id="CampoIdReporter" pref="231" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="CampoNomeReporter" alignment="0" max="32767" attributes="0"/>
+                          <Component id="CampoIdReporter" alignment="0" pref="231" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
