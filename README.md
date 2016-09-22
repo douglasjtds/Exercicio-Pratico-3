@@ -1,2 +1,4 @@
 # JavaTesteEP3
-Teste uppando projeto Java do Exercício Pratico 3 do Professor Moisés
+Teste upando projeto Java do Exercício Pratico 3 do Professor Moisés.
+
+
