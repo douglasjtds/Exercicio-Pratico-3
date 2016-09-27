@@ -108,6 +108,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenu5.add(jMenuItem11);
 
         jMenuItem12.setText("reporteres");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem12);
 
         jMenu3.add(jMenu5);
@@ -226,6 +231,11 @@ public class TelaInicial extends javax.swing.JFrame {
         //Criar opção de remover programa da emissora: 
         
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments
