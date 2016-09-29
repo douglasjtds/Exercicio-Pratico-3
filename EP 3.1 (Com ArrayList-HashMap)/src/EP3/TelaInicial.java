@@ -1,13 +1,14 @@
 package EP3;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 /**
  * @author douglasjtds
  */
 
-public class TelaInicial extends javax.swing.JFrame {
+public class TelaInicial extends javax.swing.JFrame{
 
     private ArrayList<Reporter> listaReporter = new ArrayList<>();
     /**
@@ -226,6 +227,19 @@ public class TelaInicial extends javax.swing.JFrame {
         tem pelo menos mais um repórter. Caso não tenha exiba uma
         mensagem informando que não pode removê-lo.
         */
+        String nome = JOptionPane.showInputDialog("Informe o nome do reporter a ser removido: ").toLowerCase();
+        boolean achou = false;
+        for (Reporter i : listaReporter) {
+            if (i.getNomeCompletoReporter().toLowerCase().equals(nome)) {              
+                listaReporter.remove(i);
+                JOptionPane.showMessageDialog(null, "Reporter Deletado!");
+                achou = true;
+                break;
+            }
+        }
+        if (!achou) {
+            JOptionPane.showMessageDialog(null, "Reporter não encontrado!");
+        }
         
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
@@ -235,7 +249,11 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        // TODO add your handling code here:
+        //Listar reporteres
+        Iterator<Reporter> i = listaReporter.iterator();
+        while (i.hasNext()){
+            JOptionPane.showMessageDialog(null, i.next().imprimeReporter());
+        }
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 

@@ -99,6 +99,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="CampoIdReporter">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoIdReporterActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.Button" name="botaoCadastrarReporter">
       <Properties>

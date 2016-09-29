@@ -30,7 +30,7 @@ public class Reporter {
         this.idSequencial = idSequencial;
     }
     
-    public String imprimeReporteres() {
+    public String imprimeReporter() {
         return "Nome do repórter: " + nomeCompletoReporter + "\n" +
                "ID: " + idSequencial + "\n";
     }

@@ -21,6 +21,7 @@ public class TelaInserirReporter extends javax.swing.JFrame {
         this.listaDeReporter = listaDeReporter;
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,6 +53,12 @@ public class TelaInserirReporter extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Id:");
+
+        CampoIdReporter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoIdReporterActionPerformed(evt);
+            }
+        });
 
         botaoCadastrarReporter.setLabel("Cadastrar");
         botaoCadastrarReporter.addActionListener(new java.awt.event.ActionListener() {
@@ -87,9 +94,8 @@ public class TelaInserirReporter extends javax.swing.JFrame {
                                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                                 .addComponent(botaoCadastrarReporter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(CampoNomeReporter)
-                                .addComponent(CampoIdReporter, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))))
+                            .addComponent(CampoNomeReporter, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoIdReporter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,7 +123,7 @@ public class TelaInserirReporter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoCadastrarReporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarReporterActionPerformed
-        //Cadastrar um novo reporter:        (ESTÁ DANDO ERRO)
+        //Cadastrar um novo reporter:
         Reporter rep = new Reporter(CampoNomeReporter.getText(), new Integer (CampoIdReporter.getText()));
         listaDeReporter.add(rep);
         JOptionPane.showMessageDialog(null, "Repórter " + rep.getNomeCompletoReporter() + "cadastrado com sucesso.");
@@ -132,6 +138,10 @@ public class TelaInserirReporter extends javax.swing.JFrame {
     private void CampoNomeReporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeReporterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoNomeReporterActionPerformed
+
+    private void CampoIdReporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdReporterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoIdReporterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
