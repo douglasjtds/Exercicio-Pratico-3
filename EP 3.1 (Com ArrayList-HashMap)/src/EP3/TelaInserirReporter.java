@@ -123,10 +123,10 @@ public class TelaInserirReporter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoCadastrarReporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarReporterActionPerformed
-        //Cadastrar um novo reporter:
+        //Cadastrar um novo reporter:        
         Reporter rep = new Reporter(CampoNomeReporter.getText(), new Integer (CampoIdReporter.getText()));
         listaDeReporter.add(rep);
-        JOptionPane.showMessageDialog(null, "Repórter " + rep.getNomeCompletoReporter() + "cadastrado com sucesso.");
+        JOptionPane.showMessageDialog(null, "Repórter " + rep.getNomeCompletoReporter() + " cadastrado com sucesso.");
         CampoNomeReporter.setText("");
         CampoIdReporter.setText("");        
     }//GEN-LAST:event_botaoCadastrarReporterActionPerformed

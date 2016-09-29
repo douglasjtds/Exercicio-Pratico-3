@@ -5,9 +5,12 @@ package EP3;
  * @author douglasjtds
  */
 public class Programa {
-    private int idSequencial;
+    
     private String nomeDoPrograma;
+    private int idSequencial;
 
+    
+    
     public int getIdSequencial() {
         return idSequencial;
     }
@@ -24,4 +27,15 @@ public class Programa {
         this.nomeDoPrograma = nomeDoPrograma;
     }
     
+    public Programa(String nomeDoPrograma, int idSequencial) {
+        this.nomeDoPrograma = nomeDoPrograma;
+        this.idSequencial = idSequencial;
+    }
+
+    
+    
+    public String imprimeProgramas() {
+        return "Nome do repórter: " + nomeDoPrograma + "\n" +
+               "ID: " + idSequencial + "\n";
+    }
 }

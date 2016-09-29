@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 public class TelaInicial extends javax.swing.JFrame{
 
     private ArrayList<Reporter> listaReporter = new ArrayList<>();
+    private ArrayList<Programa> listaPrograma = new ArrayList<>();
     /**
      * Creates new form TelaInicial
      */
@@ -191,7 +192,7 @@ public class TelaInicial extends javax.swing.JFrame{
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         //botão que chama opção de inserir reporter da emissora
-        TelaInserirReporter tir = new TelaInserirReporter();
+        TelaInserirReporter tir = new TelaInserirReporter(listaReporter);
         tir.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
@@ -204,6 +205,8 @@ public class TelaInicial extends javax.swing.JFrame{
         //botão que chama opção de inserir programa da emissora
         /*Não deve ser possível inserir dois programas com a mesma ID
         */
+        TelaInserirPrograma tip = new TelaInserirPrograma(listaPrograma);
+        tip.setVisible(true);
                 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -213,11 +216,11 @@ public class TelaInicial extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // opção de assosiar reporter da emissora: 
+        // opção de assossiar reporter da emissora: 
         /* Não deve ser possível assossiar dois
         reporters com o mesmo ID
-        */
-        
+        */ 
+ 
         
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
