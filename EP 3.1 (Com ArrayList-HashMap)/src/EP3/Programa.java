@@ -35,7 +35,7 @@ public class Programa {
     
     
     public String imprimeProgramas() {
-        return "Nome do repórter: " + nomeDoPrograma + "\n" +
+        return "Nome do Programa: " + nomeDoPrograma + "\n" +
                "ID: " + idSequencial + "\n";
     }
 }

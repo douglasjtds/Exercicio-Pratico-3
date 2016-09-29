@@ -128,7 +128,16 @@ public class TelaInserirReporter extends javax.swing.JFrame {
         listaDeReporter.add(rep);
         JOptionPane.showMessageDialog(null, "Repórter " + rep.getNomeCompletoReporter() + " cadastrado com sucesso.");
         CampoNomeReporter.setText("");
-        CampoIdReporter.setText("");        
+        CampoIdReporter.setText("");  
+        /*        for (reporter Rep : Reporteres) {
+            if (Rep.getIdSequencial() == r.getIdSequencial()) {
+                JOptionPane.showMessageDialog(null, "Repórter não pode ser cadastrado! \nInforme outro ID!");
+                    jTextField1.setText("");
+                    jTextField2.setText("");
+                
+                break;
+            }
+        } */
     }//GEN-LAST:event_botaoCadastrarReporterActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed

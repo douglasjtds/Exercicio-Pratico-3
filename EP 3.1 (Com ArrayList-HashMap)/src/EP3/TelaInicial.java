@@ -36,15 +36,13 @@ public class TelaInicial extends javax.swing.JFrame{
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -87,25 +85,14 @@ public class TelaInicial extends javax.swing.JFrame{
         });
         jMenu3.add(jMenuItem7);
 
-        jMenuItem1.setText("Inserir programa");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem1);
-
-        jMenuItem8.setText("Remover programa");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem8);
-
         jMenu5.setText("Listar");
 
         jMenuItem10.setText("programas");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem10);
 
         jMenuItem11.setText("programas por reporter");
@@ -125,21 +112,21 @@ public class TelaInicial extends javax.swing.JFrame{
 
         jMenu4.setText("Programa");
 
-        jMenuItem4.setText("Adicionar repórter");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Inserir programa");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem4);
+        jMenu4.add(jMenuItem1);
 
-        jMenuItem5.setText("Remover repórter");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem8.setText("Remover programa");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jMenuItem8ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem5);
+        jMenu4.add(jMenuItem8);
 
         jMenu1.add(jMenu4);
 
@@ -196,11 +183,6 @@ public class TelaInicial extends javax.swing.JFrame{
         tir.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        //botão que chama opção de remover reporter do programa
-        
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         //botão que chama opção de inserir programa da emissora
         /*Não deve ser possível inserir dois programas com a mesma ID
@@ -209,11 +191,6 @@ public class TelaInicial extends javax.swing.JFrame{
         tip.setVisible(true);
                 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        //Criar opção de adicionar repórter ao programa:
-        
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // opção de assossiar reporter da emissora: 
@@ -249,16 +226,59 @@ public class TelaInicial extends javax.swing.JFrame{
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         //Criar opção de remover programa da emissora: 
         
+        Integer id = new Integer(JOptionPane.showInputDialog("Informe o id do programa a ser removido: "));
+        boolean achou = false;
+        for(Programa i : listaPrograma){
+            if(i.getIdSequencial() == id){
+                listaPrograma.remove(i);
+                JOptionPane.showMessageDialog(null, "Programa Deletado!");
+                achou = true;
+                break;
+            }
+        }
+        if (!achou){
+            JOptionPane.showMessageDialog(null, "Programa não encontrado! =[");
+        }
+        
+        /*String nome = JOptionPane.showInputDialog("Informe o nome do reporter a ser removido: ").toLowerCase();
+        boolean achou = false;
+        for (Reporter i : listaReporter) {
+            if (i.getNomeCompletoReporter().toLowerCase().equals(nome)) {              
+                listaReporter.remove(i);
+                JOptionPane.showMessageDialog(null, "Reporter Deletado!");
+                achou = true;
+                break;
+            }
+        }
+        if (!achou) {
+            JOptionPane.showMessageDialog(null, "Reporter não encontrado!");
+        } */
+        
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         //Listar reporteres
         Iterator<Reporter> i = listaReporter.iterator();
-        while (i.hasNext()){
+        if (i.hasNext()){
             JOptionPane.showMessageDialog(null, i.next().imprimeReporter());
+        } 
+        else{
+            JOptionPane.showMessageDialog(null, "Nenhum reporter cadastrado. =[");
         }
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        //Listar programa
+        Iterator<Programa> i = listaPrograma.iterator();
+        if (i.hasNext()){
+            JOptionPane.showMessageDialog(null, i.next().imprimeProgramas());
+        } 
+        else{
+            JOptionPane.showMessageDialog(null, "Nenhum programa cadastrado. =[");
+        }
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,8 +330,6 @@ public class TelaInicial extends javax.swing.JFrame{
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;

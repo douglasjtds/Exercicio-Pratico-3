@@ -4,6 +4,7 @@ package EP3;
  *
  * @author douglasjtds
  */
+
 public class Reporter {
     
     private String nomeCompletoReporter;
