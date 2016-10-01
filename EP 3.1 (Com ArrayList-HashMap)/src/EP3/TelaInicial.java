@@ -36,13 +36,13 @@ public class TelaInicial extends javax.swing.JFrame{
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -85,29 +85,6 @@ public class TelaInicial extends javax.swing.JFrame{
         });
         jMenu3.add(jMenuItem7);
 
-        jMenu5.setText("Listar");
-
-        jMenuItem10.setText("programas");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem10);
-
-        jMenuItem11.setText("programas por reporter");
-        jMenu5.add(jMenuItem11);
-
-        jMenuItem12.setText("reporteres");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem12);
-
-        jMenu3.add(jMenu5);
-
         jMenu1.add(jMenu3);
 
         jMenu4.setText("Programa");
@@ -131,6 +108,29 @@ public class TelaInicial extends javax.swing.JFrame{
         jMenu1.add(jMenu4);
 
         jMenuBar1.add(jMenu1);
+
+        jMenu5.setText("Listar");
+
+        jMenuItem10.setText("programas");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem10);
+
+        jMenuItem11.setText("programas por reporter");
+        jMenu5.add(jMenuItem11);
+
+        jMenuItem12.setText("reporteres");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem12);
+
+        jMenuBar1.add(jMenu5);
 
         jMenu2.setText("Sobre");
 
@@ -207,18 +207,19 @@ public class TelaInicial extends javax.swing.JFrame{
         tem pelo menos mais um repórter. Caso não tenha exiba uma
         mensagem informando que não pode removê-lo.
         */
-        String nome = JOptionPane.showInputDialog("Informe o nome do reporter a ser removido: ").toLowerCase();
+        
+        Integer id = new Integer(JOptionPane.showInputDialog("Informe o id do repórter a ser removido: "));
         boolean achou = false;
         for (Reporter i : listaReporter) {
-            if (i.getNomeCompletoReporter().toLowerCase().equals(nome)) {              
+            if (i.getIdSequencial() == id) {              
                 listaReporter.remove(i);
-                JOptionPane.showMessageDialog(null, "Reporter Deletado!");
+                JOptionPane.showMessageDialog(null, "Reporter " + i.getNomeCompletoReporter() +" deletado!");
                 achou = true;
                 break;
             }
         }
         if (!achou) {
-            JOptionPane.showMessageDialog(null, "Reporter não encontrado!");
+            JOptionPane.showMessageDialog(null, "Reporter não encontrado! =[");
         }
         
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -231,7 +232,7 @@ public class TelaInicial extends javax.swing.JFrame{
         for(Programa i : listaPrograma){
             if(i.getIdSequencial() == id){
                 listaPrograma.remove(i);
-                JOptionPane.showMessageDialog(null, "Programa Deletado!");
+                JOptionPane.showMessageDialog(null, "Programa " + i.getNomeDoPrograma() + " Deletado!");
                 achou = true;
                 break;
             }
@@ -239,20 +240,6 @@ public class TelaInicial extends javax.swing.JFrame{
         if (!achou){
             JOptionPane.showMessageDialog(null, "Programa não encontrado! =[");
         }
-        
-        /*String nome = JOptionPane.showInputDialog("Informe o nome do reporter a ser removido: ").toLowerCase();
-        boolean achou = false;
-        for (Reporter i : listaReporter) {
-            if (i.getNomeCompletoReporter().toLowerCase().equals(nome)) {              
-                listaReporter.remove(i);
-                JOptionPane.showMessageDialog(null, "Reporter Deletado!");
-                achou = true;
-                break;
-            }
-        }
-        if (!achou) {
-            JOptionPane.showMessageDialog(null, "Reporter não encontrado!");
-        } */
         
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
@@ -274,8 +261,7 @@ public class TelaInicial extends javax.swing.JFrame{
         Iterator<Programa> i = listaPrograma.iterator();
         if (i.hasNext()){
             JOptionPane.showMessageDialog(null, i.next().imprimeProgramas());
-        } 
-        else{
+        } else{
             JOptionPane.showMessageDialog(null, "Nenhum programa cadastrado. =[");
         }
     }//GEN-LAST:event_jMenuItem10ActionPerformed

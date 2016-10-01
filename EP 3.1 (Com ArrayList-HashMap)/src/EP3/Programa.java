@@ -35,7 +35,7 @@ public class Programa {
     
     
     public String imprimeProgramas() {
-        return "Nome do Programa: " + nomeDoPrograma + "\n" +
+        return "Nome do Programa: " + nomeDoPrograma.toUpperCase() + "\n" +
                "ID: " + idSequencial + "\n";
     }
 }
