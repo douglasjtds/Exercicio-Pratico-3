@@ -199,8 +199,8 @@ public class TelaInicial extends javax.swing.JFrame{
         /* Não deve ser possível assossiar dois
         reporters com o mesmo ID
         */ 
- 
         
+           
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
