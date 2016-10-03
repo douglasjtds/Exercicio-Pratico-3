@@ -111,6 +111,7 @@ public class TelaInicial extends javax.swing.JFrame{
 
         jMenu5.setText("Listar");
 
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMenuItem10.setText("programas");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +123,7 @@ public class TelaInicial extends javax.swing.JFrame{
         jMenuItem11.setText("programas por reporter");
         jMenu5.add(jMenuItem11);
 
+        jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
         jMenuItem12.setText("reporteres");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,11 +248,11 @@ public class TelaInicial extends javax.swing.JFrame{
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         //Listar reporteres
         Iterator<Reporter> i = listaReporter.iterator();
-        if (i.hasNext()){
+        while (i.hasNext()){
             JOptionPane.showMessageDialog(null, i.next().imprimeReporter());
         } 
-        else{
-            JOptionPane.showMessageDialog(null, "Nenhum reporter cadastrado. =[");
+        if(listaReporter.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Nenhum repórter cadastrado. =[");
         }
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed
@@ -259,9 +261,10 @@ public class TelaInicial extends javax.swing.JFrame{
         // TODO add your handling code here:
         //Listar programa
         Iterator<Programa> i = listaPrograma.iterator();
-        if (i.hasNext()){
+        while (i.hasNext()){
             JOptionPane.showMessageDialog(null, i.next().imprimeProgramas());
-        } else{
+        }
+        if(listaPrograma.isEmpty()){ 
             JOptionPane.showMessageDialog(null, "Nenhum programa cadastrado. =[");
         }
     }//GEN-LAST:event_jMenuItem10ActionPerformed
